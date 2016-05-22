@@ -1,5 +1,5 @@
 {
-  "name": "ahha-foundation",
+  "name": "ahha-susy",
   "version": "0.0.0",
   "authors": [
     "Amy Dutton <amy@ahhacreative.com>"
@@ -13,7 +13,7 @@
     "tests"
   ],
   "devDependencies": {
-    "foundation-sites": "^6.2.1",
-    "jquery.fitvids": "fitvids#^1.1.0"
+    "jquery.fitvids": "fitvids#^1.1.0",
+    "susy": "^2.2.12"
   }
 }
