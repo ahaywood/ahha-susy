@@ -7,6 +7,10 @@
 	@return url(unquote("..")/$dir/$src);
 }
 
+@function font($src) {
+	$src: unquote($src);
+	@return url($font-path/$src);
+}
 
 @function grayscale($value) {
   @return #{ "grayscale(" + $value + ")" };
