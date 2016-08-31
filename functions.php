@@ -378,9 +378,29 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
     Create an ACF Options Page
     http://www.advancedcustomfields.com/resources/options-page/
  \*------------------------------------*/
-if( function_exists('acf_add_options_page') ) {
-    acf_add_options_page();
-}
+ if( function_exists('acf_add_options_page') ) {
+
+ 	acf_add_options_page(array(
+ 		'page_title' 	=> 'Options',
+ 		'menu_title'	=> 'Options',
+ 		'menu_slug' 	=> 'theme-options',
+ 		'capability'	=> 'edit_posts',
+ 		'redirect'		=> false
+ 	));
+
+ 	/* acf_add_options_sub_page(array(
+ 		'page_title' 	=> 'Theme Header Settings',
+ 		'menu_title'	=> 'Header',
+ 		'parent_slug'	=> 'theme-general-settings',
+ 	));
+
+ 	acf_add_options_sub_page(array(
+ 		'page_title' 	=> 'Theme Footer Settings',
+ 		'menu_title'	=> 'Footer',
+ 		'parent_slug'	=> 'theme-general-settings',
+ 	)); */
+
+ }
 
 
-// TODO: INCLUDE AH HA CREATIVE BRANDED LOGIN SCREEN 
+// TODO: INCLUDE AH HA CREATIVE BRANDED LOGIN SCREEN
