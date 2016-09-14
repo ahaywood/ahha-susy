@@ -1,4 +1,4 @@
-//= include ../../../bower_components/foundation/js/foundation.js
+//= include ../../../bower_components/jquery.fitvids/jquery.fitvids.js
 
 jQuery ( function($) {
 
@@ -7,15 +7,15 @@ jQuery ( function($) {
 
 });
 
-function SiteController($) 
+function SiteController($)
 {
-	self.init = function() 
+	self.init = function()
 	{
-		initFoundation();
+		initFitVid();
 	}
 
-	function initFoundation() {
-		$(document).foundation();
+	function initFitVid() {
+		
 	}
 
 	return self;
