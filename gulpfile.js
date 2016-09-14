@@ -18,6 +18,7 @@ var gulp = require('gulp'),
 	rename = require("gulp-rename"),
 	inject = require('gulp-inject'),
 	cheerio = require('gulp-cheerio'),
+	chug = require('gulp-chug'),
 	browserSync = require('browser-sync').create(),
 	del = require('del');
 
@@ -45,7 +46,7 @@ gulp.task('styles', function() {
 	gulp.src('assets/src/scss/main.scss')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(sass({
-			includePaths: ['bower_components/susy', 'bower_components/normalise-scss']
+			includePaths: ['bower_components/susy']
 		}) )
 		.pipe(prefix("last 2 versions"))
 		.pipe(minifyCSS())
@@ -78,7 +79,7 @@ gulp.task('img', function () {
 	var filter = gulpFilter(['*', '!placeholder-**']);
 
   	gulp.src('assets/src/img/*')
-  		.pipe(filter)
+  // 		.pipe(filter)
 		.pipe(cache(imagemin({
 			progressive: true,
 			svgoPlugins: [{removeViewBox: false}],
@@ -88,6 +89,13 @@ gulp.task('img', function () {
 		})))
 		.pipe(gulp.dest('assets/dist/img/'));
 });
+
+
+// BUILD PATTERN LAB
+// gulp.task( 'patternlab', function () {
+//     gulp.src( './patternlab/gulpfile.js' )
+//         .pipe( chug() );
+// } );
 
 
 // FONTS
@@ -113,8 +121,8 @@ gulp.task('clean', function() {
 gulp.task('serve', ['styles'], function() {
     browserSync.init({
 		open: 'external',
-		host: 'nifw.dev',
-        proxy: 'nifw.dev',
+		host: 'meforwe.dev',
+        proxy: 'meforwe.dev',
 		ghostMode: {
 			clicks: true,
 			forms: true,
