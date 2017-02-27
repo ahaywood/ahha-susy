@@ -11,10 +11,3 @@
 @import "theme";
 @import "arrows";
 @import "zindex";
-
-/**
- * _justfied-nav.scss should not be imported here.
- * It is is set up to be imported as a sass import
- * so that it also copies over nested selectors
- * http://codepen.io/trey/blog/nesting-sass-includes
- */
